@@ -7,3 +7,153 @@ INFO:root:Constructing parser
 DEBUG:root:Constructing put subparser
 INFO:root:Constructing parser
 DEBUG:root:Constructing put subparser
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+ERROR:root:FIXME: Unimplemented - get('juice')
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+ERROR:root:FIXME: Unimplemented - get('smoothie')
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+ERROR:root:FIXME: Unimplemented - put('smoothie', 'A great drink')
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+ERROR:root:FIXME: Unimplemented - get('smoothie')
+DEBUG:root:Connecting to PostgreSQL
+DEBUG:root:Database connection established
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+DEBUG:root:Connecting to PostgreSQL
+DEBUG:root:Database connection established
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+DEBUG:root:Connecting to PostgreSQL
+DEBUG:root:Database connection established
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+DEBUG:root:Connecting to PostgreSQL
+DEBUG:root:Database connection established
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+DEBUG:root:Connecting to PostgreSQL
+DEBUG:root:Database connection established
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+INFO:root:Storing snippet 'test': 'This is a test snippet'
+DEBUG:root:Snippet stored successfully.
+DEBUG:root:Connecting to PostgreSQL
+DEBUG:root:Database connection established
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+DEBUG:root:Connecting to PostgreSQL
+DEBUG:root:Database connection established
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+INFO:root:Retrieving snippets with name: 'test'.
+DEBUG:root:Connecting to PostgreSQL
+DEBUG:root:Database connection established
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+INFO:root:Retrieving snippets with name: 'test'.
+DEBUG:root:Connecting to PostgreSQL
+DEBUG:root:Database connection established
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+INFO:root:Retrieving snippets with name: 'test'.
+DEBUG:root:Retrieved snippet successfully
+DEBUG:root:Connecting to PostgreSQL
+DEBUG:root:Database connection established
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+INFO:root:Retrieving snippets with name: 'test'.
+DEBUG:root:Retrieved snippet successfully
+DEBUG:root:Connecting to PostgreSQL
+DEBUG:root:Database connection established
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+INFO:root:Retrieving snippets with name: 'test'.
+DEBUG:root:Retrieved snippet successfully
+DEBUG:root:Connecting to PostgreSQL
+DEBUG:root:Database connection established
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+INFO:root:Retrieving snippets with name: 'test'.
+DEBUG:root:Connecting to PostgreSQL
+DEBUG:root:Database connection established
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+INFO:root:Retrieving snippets with name: 'test'.
+DEBUG:root:Connecting to PostgreSQL
+DEBUG:root:Database connection established
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+INFO:root:Retrieving snippets with name: 'test'.
+DEBUG:root:Connecting to PostgreSQL
+DEBUG:root:Database connection established
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+INFO:root:Storing snippet 'test2': 'Another test snippet'
+DEBUG:root:Snippet stored successfully.
+DEBUG:root:Connecting to PostgreSQL
+DEBUG:root:Database connection established
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+INFO:root:Retrieving snippets with name: 'test2'.
+DEBUG:root:Connecting to PostgreSQL
+DEBUG:root:Database connection established
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+INFO:root:Retrieving snippets with name: 'test2'.
+DEBUG:root:Connecting to PostgreSQL
+DEBUG:root:Database connection established
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+INFO:root:Storing snippet 'test3': 'Yet Another test snippet'
+DEBUG:root:Snippet stored successfully.
+DEBUG:root:Connecting to PostgreSQL
+DEBUG:root:Database connection established
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+INFO:root:Retrieving snippets with name: 'test3'.
+DEBUG:root:Connecting to PostgreSQL
+DEBUG:root:Database connection established
+INFO:root:Constructing parser
+DEBUG:root:Constructing put subparser
+DEBUG:root:Constructing get subparser
+INFO:root:Retrieving snippets with name: 'test3'.
+DEBUG:root:Retrieved snippet successfully
