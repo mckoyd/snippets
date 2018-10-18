@@ -12,10 +12,12 @@ def put(name, snippet):
     Returns the name and the snippet.
     """
     logging.info("Storing snippet {!r}: {!r}".format(name, snippet))
-    cursor = connection.cursor()
-    command = "INSERT INTO snippets VALUES({!r}, {!r})".format(name, snippet)
-    cursor.execute(command)
-    connection.commit()
+    try:
+        with connection, connection.cursor() as cursor:
+            cursor.execute("INSERT INTO snippets VALUES({!r}, {!r})".format(name, snippet))
+    except:
+        with connection, connection.cursor() as cursor:
+            cursor.execute("UPDATE snippets SET message={!r} WHERE keyword={!r}".format(snippet, name))
     logging.debug("Snippet stored successfully.")
     return name, snippet
     
@@ -26,13 +28,16 @@ def get(name):
     Returns the snippet.
     """
     logging.info("Retrieving snippets with name: {!r}.".format(name))
-    cursor = connection.cursor()
-    command = "SELECT message FROM snippets WHERE keyword={!r}".format(name)
-    cursor.execute(command)
-    snippet = cursor.fetchone()
-    connection.commit()
+    with connection, connection.cursor() as cursor:
+        cursor.execute("SELECT message FROM snippets WHERE keyword={!r}".format(name))
+        snippet = cursor.fetchone()
+
+    if not snippet:
+        # No snippet was found with that name.
+        logging.error("Snippet not found in db")
+        return "404: Snippet Not Found"
     logging.debug("Retrieved snippet successfully")
-    return snippet
+    return snippet[0]
 
 def main():
     """Main function"""
