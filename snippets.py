@@ -68,6 +68,16 @@ def search(query):
     logging.debug("Retrieved all entries matching query.")
     return entries
 
+def delete(name):
+    """
+    Deletes a snippet based on name.
+    """
+    logging.debug("Retrieving snippet with name: {!r}".format(name))
+    with connection, connection.cursor() as cursor:
+        cursor.execute("DELETE FROM snippets WHERE keyword={!r}".format(name))
+    logging.debug("Deleted entry with name: {}".format(name))
+    return name
+
 def main():
     """Main function"""
     logging.info("Constructing parser")
@@ -94,7 +104,12 @@ def main():
     # Subparser for the search command
     logging.debug("Constructing search subparser")
     get_parser = subparsers.add_parser("search", help="Search for snippets based on query")
-    get_parser.add_argument("query", help="Searches for snippets that match the given query")
+    get_parser.add_argument("query", help="Query string to search for in all snippets")
+
+    # Subparser for the delete command
+    logging.debug("Constructing delete subparser")
+    get_parser = subparsers.add_parser("delete", help="Deletes a snippet by name")
+    get_parser.add_argument("name", help="Name of snippet to delete")
 
     arguments = parser.parse_args()
     arguments = vars(arguments)
@@ -115,6 +130,9 @@ def main():
     elif command == "search":
         entries = search(**arguments)
         print("Retrieved all entries matching given query: {!r}".format(entries))
+    elif command == "delete":
+        name = delete(**arguments)
+        print("Deleted snippet with name: {}".format(name))
 
 if __name__ == "__main__":
     main()
