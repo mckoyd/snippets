@@ -6,20 +6,27 @@ logging.debug("Connecting to PostgreSQL")
 connection = psycopg2.connect(database="snippets")
 logging.debug("Database connection established")
 
-def put(name, snippet):
+def put(name, snippet, hide, show):
     """
     Store a snippet with an associated name.
     Returns the name and the snippet.
     """
-    logging.info("Storing snippet {!r}: {!r}".format(name, snippet))
+    if not hide or not show:
+        hidden = False
+    elif hide:
+        hidden = hide
+    elif show:
+        hidden = show
+    
+    logging.info("Storing snippet {!r}: {!r}, hidden: {!r}".format(name, snippet, hidden))
     try:
         with connection, connection.cursor() as cursor:
-            cursor.execute("INSERT INTO snippets VALUES({!r}, {!r})".format(name, snippet))
+            cursor.execute("INSERT INTO snippets VALUES({!r}, {!r}, {!r})".format(name, snippet, hidden))
     except:
         with connection, connection.cursor() as cursor:
-            cursor.execute("UPDATE snippets SET message={!r} WHERE keyword={!r}".format(snippet, name))
+            cursor.execute("UPDATE snippets SET message={!r}, hidden={!r} WHERE keyword={!r}".format(snippet, hidden, name))
     logging.debug("Snippet stored successfully.")
-    return name, snippet
+    return name, snippet, hidden
     
 def get(name):
     """
@@ -72,6 +79,8 @@ def main():
     put_parser = subparsers.add_parser("put", help="Store a snippet")
     put_parser.add_argument("name", help="Name of the snippet")
     put_parser.add_argument("snippet", help="Snippet")
+    put_parser.add_argument("--hide", help="Declare that snippet is hidden", action="store_true")
+    put_parser.add_argument("--show", help="Declare snippet to not be hidden", action="store_false")
     
     # Subparser for the get command
     logging.debug("Constructing get subparser")
@@ -92,8 +101,8 @@ def main():
     command = arguments.pop("command")
 
     if command == "put":
-        name, snippet = put(**arguments)
-        print("Stored {!r} as {!r}".format(snippet, name))
+        name, snippet, hidden = put(**arguments)
+        print("Stored {!r} as {!r}, hidden: {!r}".format(snippet, name, hidden))
     elif command == "get":
         snippet = get(**arguments)
         print("Retreived snippet: {!r}".format(snippet))
